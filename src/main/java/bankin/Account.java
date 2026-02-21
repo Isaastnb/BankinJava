@@ -35,8 +35,12 @@ public class Account {
         this.money = money;
     }
 
-    public void insert(double cash){
+    public void insert(Scanner sc){
+        System.out.print("How much? ");
+        double cash = sc.nextDouble();
         this.money += cash;
+        System.out.printf("$ %.2f added! ", cash);
+
     }
 
     public void pay(double cash){

@@ -24,19 +24,35 @@ public class Main {
 
 
         // Bank menu
-        int resposta;
+        int answer;
         boolean loop = true;
         while(loop) {
             System.out.println("Welcome to your bank account, " + a.getName() + "! what do you want to do now?");
             System.out.println("----------------------------------------------------------");
 
-            System.out.printf("1.check account\n2.deposit money\n3.exit");
-            resposta = read.nextInt();
-            read.nextLine();
+            System.out.printf("1.check account\n2.deposit money\n3.exit\n");
+            answer = read.nextInt();
+            // read.nextLine();
+
+            switch (answer){
+                case 1:
+                    System.out.println("You have $ "+a.getMoney());
+                    break;
+                case 2:
+                    a.insert(read);
+                    break;
+
+                default:
+                    System.out.println("Bye!");
+                    loop = false;
+
+
+            }
 
 
         }
         read.close();
+
 
     }
 }
