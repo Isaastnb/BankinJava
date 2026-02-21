@@ -30,7 +30,7 @@ public class Main {
             System.out.println("Welcome to your bank account, " + a.getName() + "! what do you want to do now?");
             System.out.println("----------------------------------------------------------");
 
-            System.out.printf("1.check account\n2.deposit money\n3.exit\n");
+            System.out.printf("1.check account\n2.deposit money\n3.pay\n4.exit\n");
             answer = read.nextInt();
             // read.nextLine();
 
@@ -40,6 +40,10 @@ public class Main {
                     break;
                 case 2:
                     a.insert(read);
+                    break;
+
+                case 3:
+                    a.pay(read);
                     break;
 
                 default:

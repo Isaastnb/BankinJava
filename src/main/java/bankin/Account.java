@@ -43,8 +43,11 @@ public class Account {
 
     }
 
-    public void pay(double cash){
+    public void pay(Scanner sc){
+        System.out.print("How much you'll pay? ");
+        double cash = sc.nextDouble();
         this.money -= cash;
+        System.out.println("Your purchase of $ "+cash+ " was confirmed!");
     }
 
 
