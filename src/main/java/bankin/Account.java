@@ -1,5 +1,7 @@
 package bankin;
 
+import bankin.DataBase;
+
 import java.util.Scanner;
 
 public class Account {
@@ -40,6 +42,7 @@ public class Account {
         double cash = sc.nextDouble();
         this.money += cash;
         System.out.printf("$ %.2f added! ", cash);
+
 
     }
 

@@ -1,8 +1,9 @@
 package bankin;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
-    static void main() {
+    static void main() throws SQLException {
         Scanner read = new Scanner(System.in);
         // Register account
 
@@ -19,6 +20,11 @@ public class Main {
 
         } else {
             a.setAge(age);
+
+            DataBase db = new DataBase();
+
+            db.insert(a);
+
 
             // Bank menu
             int answer;
@@ -37,10 +43,12 @@ public class Main {
                         break;
                     case 2:
                         a.insert(read);
+                        db.update(a);
                         break;
 
                     case 3:
                         a.pay(read);
+                        db.update(a);
                         break;
 
                     default:
