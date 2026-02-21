@@ -19,43 +19,45 @@ public class Main {
 
         } else {
             a.setAge(age);
-        }
+
+            // Bank menu
+            int answer;
+            boolean loop = true;
+            while(loop) {
+                System.out.println("Welcome to your bank account, " + a.getName() + "! what do you want to do now?");
+                System.out.println("----------------------------------------------------------");
+
+                System.out.printf("1.check account\n2.deposit money\n3.pay\n4.exit\n");
+                answer = read.nextInt();
 
 
+                switch (answer){
+                    case 1:
+                        System.out.println("You have $ "+a.getMoney());
+                        break;
+                    case 2:
+                        a.insert(read);
+                        break;
 
-        // Bank menu
-        int answer;
-        boolean loop = true;
-        while(loop) {
-            System.out.println("Welcome to your bank account, " + a.getName() + "! what do you want to do now?");
-            System.out.println("----------------------------------------------------------");
+                    case 3:
+                        a.pay(read);
+                        break;
 
-            System.out.printf("1.check account\n2.deposit money\n3.pay\n4.exit\n");
-            answer = read.nextInt();
-            // read.nextLine();
+                    default:
+                        System.out.println("Bye!");
+                        loop = false;
 
-            switch (answer){
-                case 1:
-                    System.out.println("You have $ "+a.getMoney());
-                    break;
-                case 2:
-                    a.insert(read);
-                    break;
 
-                case 3:
-                    a.pay(read);
-                    break;
-
-                default:
-                    System.out.println("Bye!");
-                    loop = false;
+                }
 
 
             }
-
-
+            read.close();
         }
-        read.close();
+
+
+
+
 
 
     }
